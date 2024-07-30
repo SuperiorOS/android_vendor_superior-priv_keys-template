@@ -101,3 +101,6 @@ generate_overrides_mk .data/platform_app_keys.txt
 echo "" >> keys.mk
 echo "PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/superior-priv/keys/releasekey" >> keys.mk
 echo "PRODUCT_EXTRA_RECOVERY_KEYS += vendor/superior-priv/keys/signed" >> keys.mk
+
+# Remove unnecessary files after done
+rm -rf gen_keys .data .gitignore README.md
