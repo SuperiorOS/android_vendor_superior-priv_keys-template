@@ -100,5 +100,5 @@ PRODUCT_CERTIFICATE_OVERRIDES += \
     CtsCarrierApiTargetPrepApp:cts_uicc_2021.certificate.override \
     CtsCarrierApiTestCases:cts_uicc_2021.certificate.override
 
-PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/lineage-priv/keys/releasekey
-PRODUCT_EXTRA_RECOVERY_KEYS += vendor/lineage-priv/keys/signed
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/superior-priv/keys/releasekey
+PRODUCT_EXTRA_RECOVERY_KEYS += vendor/superior-priv/keys/signed

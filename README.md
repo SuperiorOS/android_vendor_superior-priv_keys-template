@@ -1,31 +1,28 @@
-# android_vendor_lineage-priv_keys
 
-A cool template for signing LineageOS 20.0 > builds with `dev-keys`.
+A cool template to sign SuperiorOS builds with `dev-keys`.
 
 ## Usage
 
-1. Make sure you have [`android-tools`](https://github.com/nmeum/android-tools) installed on your machine.
-2. Clone this repo to `vendor/lineage-priv/keys` (on your synced ROM rootdir) and `cd` to it.
-3. Edit both `subject` vars on `gen_keys` script to reflect your data [[ref]](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/ldap/distinguished-names).
-4. Run it:
+1. Clone the repository 
 
-```bash
-$ ./gen_keys
+```
+git clone https://github.com/SuperiorOS/android_vendor_superior-priv_keys-template.git vendor/superior-priv/keys 
 ```
 
-It will generate the certificates (defined in the `.data/` folder) in `vendor/lineage-priv/keys`, the actual keys used to generate the certificates in `~/.android-certs/`, and regenerate the makefiles as new entries are added.
+2. Go to the key directory 
 
-Backup **AT ALL COSTS** your `~/.android-certs/` and `vendor/lineage-priv/keys` folders **AND NEVER LEAK THOSE**. Losing these keys could prevent you from updating your LineageOS builds with the same keys, so formatting data would be required. Leakage of these keys can compromise the security and authenticity of your builds, requiring a new pair of keys to be generated.
-
-## Bonus step
-
-You can generate a public key which can be used to verify the authenticity of your builds:
-
-1. Fork and clone [LineageOS/update_verifier](https://github.com/LineageOS/update_verifier)
-2. Run this command:
-
-```bash
-$ openssl rsa -in ~/.android-certs/releasekey.pem -pubout -out lineageos_pubkey
+```
+cd vendor/superior-priv/keys
 ```
 
-3. Push the changes to your fork.
+3. Run the script
+
+```
+./gen_keys
+```
+
+It will generate the certificates in vendor/superior-priv/keys and the actual keys used to generate the certificates in ~/.android-certs/.
+
+It will also generate the makefiles based on the keys defined in the _data/ folder.
+
+Backup AT ALL COSTS your ~/.android-certs/ and vendor/superior-priv/keys folders AND NEVER LEAK THOSE. Losing these keys could prevent you from updating your SuperiorOS builds with the same keys, so formatting data would be required. Leakage of these keys can compromise the security and authenticity of your builds, requiring a new pair of keys to be generated.
